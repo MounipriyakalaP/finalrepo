@@ -3,67 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Study Planner</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js library -->
+  <title>About - Student Study Planner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #007BFF;
+    }
+    h2 {
+      margin-top: 20px;
+      color: #333;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-  <!-- Step 2: Protect planner, redirect if not logged in -->
-  <script>
-    if (!localStorage.getItem("loggedInUser")) {
-      window.location.href = "login.html";
-    }
-  </script>
-
-  <!-- Step 4: Logout button -->
-  <button onclick="logout()" 
-          style="float:right; background:red; color:white; padding:5px 10px; border:none; border-radius:6px; cursor:pointer;">
-    Logout
-  </button>
-
   <div class="container">
     <h1>📚 Student Study Planner</h1>
-
-   <form id="studyForm">
-  <input type="text" id="subject" placeholder="Enter Subject" required>
-  <input type="number" id="time" placeholder="Enter Time" required>
-  <select id="unit">
-    <option value="hours">Hours</option>
-    <option value="minutes">Minutes</option>
-  </select>
-  <button type="submit">Add</button>
-</form>
-
-
-    <!-- Table -->
-    <h2>Your Study Plan</h2>
-    <table id="studyTable">
-      <tr>
-        <th>Subject</th>
-        <th>Hours</th>
-        <th>Action</th>
-      </tr>
-    </table>
-
-    <!-- Chart -->
-    <h2>Study Progress</h2>
-    <canvas id="studyChart"></canvas>
-
-    <!-- Suggestions -->
-    <h2>Suggestions</h2>
-    <p id="suggestions" style="text-align:center; font-weight:bold; color:gray;">
-      No data yet. Start adding your study time!
+    <p>
+      The <strong>Student Study Planner</strong> is a simple web application designed to help students 
+      plan and track their study schedule effectively. It combines easy subject entry, a study table, 
+      progress chart, and personalized suggestions to encourage better learning habits.
     </p>
+
+    <h2>✨ Features</h2>
+    <ul>
+      <li>Login & Signup to create your personal planner account</li>
+      <li>Add subjects with study time (in hours or minutes)</li>
+      <li>View all your study plan in a clean table</li>
+      <li>Track progress using an interactive chart</li>
+      <li>Get suggestions based on your total study hours</li>
+      <li>Edit or delete subjects anytime</li>
+    </ul>
+
+    <h2>🛠️ Technologies Used</h2>
+    <ul>
+      <li><b>HTML</b> – structure of the website</li>
+      <li><b>CSS</b> – styling and design</li>
+      <li><b>JavaScript</b> – logic and interactivity</li>
+      <li><b>Chart.js</b> – for progress graph</li>
+      <li><b>LocalStorage</b> – to save user data in browser</li>
+    </ul>
+
+    <h2>🎯 Purpose</h2>
+    <p>
+      This project was built to make student study planning easier and more engaging. 
+      With features like time tracking and visual charts, students can better organize their 
+      studies and stay motivated.
+    </p>
+
+    <footer>
+      Made by [Your Name] <br>
+      Student Study Planner Project
+    </footer>
   </div>
-
-  <script src="script.js"></script>
-
-  <!-- Step 4: Logout function -->
-  <script>
-    function logout() {
-      localStorage.removeItem("loggedInUser");
-      window.location.href = "login.html";
-    }
-  </script>
 </body>
 </html>
